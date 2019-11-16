@@ -16,5 +16,5 @@ let activePlayer = 0;
 
 let dice = 6;
 
-let rollDice = Math.Floor(Math.random(6));
+let rollDice = Math.floor(Math.random() * 6);
 console.log(rollDice);
