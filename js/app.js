@@ -14,7 +14,11 @@ let scores = [0,0];
 let rndScore = 0;
 let activePlayer = 0;
 
-let dice = 6;
+let dice = Math.floor(Math.random() * 6) + 1;;
 
-let rollDice = Math.floor(Math.random() * 6);
-console.log(rollDice);
+document.querySelector('#current-' + activePlayer).textContent = dice;
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em>';
+
+let x = document.querySelector('#score-0').textContent; //read score and store
+
+document.querySelector('.dice').style.display = 'none';
