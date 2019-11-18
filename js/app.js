@@ -14,11 +14,25 @@ let scores = [0,0];
 let rndScore = 0;
 let activePlayer = 0;
 
-let dice = Math.floor(Math.random() * 6) + 1;;
 
-document.querySelector('#current-' + activePlayer).textContent = dice;
-//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em>';
+//let x = document.querySelector('#score-0').textContent; //read score and store
 
-let x = document.querySelector('#score-0').textContent; //read score and store
 
 document.querySelector('.dice').style.display = 'none';
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+
+//event listener rolldice
+document.querySelector('.btn-roll').addEventListener('click', function(){
+  //1 random number
+  let dice = Math.floor(Math.random() * 6) + 1;
+  //2 display result
+  let diceDom = document.querySelector('.dice');
+  diceDom.style.display = 'block';
+  diceDom.src = 'img/dice-' + dice + '.png';
+
+  //3 update round score if the rolled number is one
+
+});
