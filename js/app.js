@@ -32,7 +32,22 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
   let diceDom = document.querySelector('.dice');
   diceDom.style.display = 'block';
   diceDom.src = 'img/dice-' + dice + '.png';
-
   //3 update round score if the rolled number is one
+  if(dice !== 1) {
+    //add Score
+    rndScore += dice;
+    document.querySelector('#current-' + activePlayer).textContent = rndScore;
+  }else{
+    //next player activePlayer changes
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    rndScore = 0;
+    // resets scores when 1 is obtained in the score area
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    //add active Class to panels
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+  }
 
 });
